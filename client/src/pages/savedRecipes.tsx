@@ -42,7 +42,8 @@ const SavedRecipe = () => {
     console.log(id);
     const User = auth.getProfile();
     if (User.id !== null && User.id !== undefined) {
-      savedRecipeAPI.deleteRecipe(id, recipe, User.id)
+      savedRecipeAPI.deleteRecipe(id, recipe, User.id);
+      window.location.reload();
     }
   }
   const GenerateSavedRecipes = () => {
@@ -66,6 +67,13 @@ const SavedRecipe = () => {
       return;
     } 
     try{
+      const data: NutrientFacts[] = await SearchNutrition(ingredient);
+      const nutritionData = data.slice(0, 14);
+      setNutritionFacts(nutritionData);
+    } catch (err) {
+      console.error("Could not fetch nutrient data", err);
+    }
+    try {
       const data: NutrientFacts[] = await SearchNutrition(ingredient);
       const nutritionData = data.slice(0, 14);
       setNutritionFacts(nutritionData);

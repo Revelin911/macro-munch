@@ -2,14 +2,9 @@
 
 ## Description
 
-This project is 
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+This is an app where you can search your favorite meals for recipes and find the nutritional information of its ingredients. The reason behind this app is to help facilitate in creating ideas for meals. This can help someone's diets and lifestyles with having recipe ideas and the knowledge of the food contents. The individual can create new lifestyles for themselves, or simply find new ideas to have fun discovering new meals. This project helped practice how to work the backend with the front end. We needed to make to correct API calls and route accordingly. It was good practice for a fullstack application from scratch.
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -18,48 +13,53 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Using a code editor, like VS Code, open the terminal. You will need to inout "npm i" in order to install all the node modules necessary. Next, "npm run build". Finally, "npm run start:dev" will begin building and running the files locally.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Below is a demonstration of what searching for a recipe would look like:
+![Recipe Finder](./client/dist/assets/recipe.png)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Below is a demontration of the nutritional facts that would display:
+![Nutritional Facts](./client/dist/assets/nutrient.png)
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+GitHub Profiles:
+https://github.com/dabbingham22 - Andrew Birmingham
+https://github.com/Payton212 - Payton Schmidt
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+https://render.com/ - Render to deploy app
 
-If you followed tutorials, include links to those here as well.
+https://choosealicense.com/licenses/mit/ - Licensing Info
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+MIT License
 
----
+Copyright (c) [year] [fullname]
 
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Badges
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+Below is the link where the app is deployed:
+https://dashboard.render.com/web/srv-cuv7mspu0jms739gfah0
+
+When entering the application, you are given the options to sign up or login. Once either action is chosen, you can begin searching for food recipes. In the food recipes you type in the search a food recipe. A recipe will show with instructions on how to create this meal. The searches will save on you will be able to reference back to them in teh "Saved Recipes". In the "Nutrition Facts" tab, you can search up a food. A food will show up with specific nutritional facts.

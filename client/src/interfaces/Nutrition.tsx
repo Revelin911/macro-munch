@@ -2,7 +2,7 @@ interface NutrientFacts {
   nutrientId: number;
   nutrientName: string;
   value: number;
-      unit: string;
+  unit: string;
   derivationDescription: string;
 }
 
