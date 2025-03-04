@@ -5,10 +5,14 @@ interface RecipeName {
 interface RecipeCardProps {
   recipe: RecipeName;
 }
+interface SavedRecipeCardProps {
+  name: string;
+  id: number;
+}
 
 interface Recipe {
   recipe_id?: number;
-  strMeal: string ;
+  strMeal: string;
   strMealThumb?: string | undefined;
   strInstructions?: string | '';
   id?: number;
@@ -36,4 +40,4 @@ interface Recipe {
   // Add other properties as needed
 }
 export default Recipe;
-export type { RecipeCardProps };
+export type { RecipeCardProps, SavedRecipeCardProps };

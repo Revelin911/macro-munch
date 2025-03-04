@@ -17,7 +17,7 @@ const SearchNutrition = async (food: NutrientFacts | string) =>{
           throw new Error("Network response was not ok");
         }
 
-        const data: NutrientFacts = await response.json();
+        const data: NutrientFacts[] = await response.json();
         return data;
   
       } catch (err) {
