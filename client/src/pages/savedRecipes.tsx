@@ -1,18 +1,24 @@
 // Purpose: This file contains the savedRecipes component which displays the saved recipes of the user.
 
 import { useState, useEffect } from "react";
-import Recipe from "../interfaces/Recipe";
+import Recipe, {SavedRecipeCardProps} from "../interfaces/Recipe";
 import savedRecipeAPI from "../api/savedRecipeAPI";
 import RecipeCard from "../api/recipeApi";
 import auth from "../utils/auth";
+import NutrientFacts from "../interfaces/Nutrition";
+import SearchNutrition from "../api/nutritionApi";
 
 const SavedRecipe = () => {
   const [recipe, setRecipe] = useState<Recipe>();
-  const [savedRecipes, setSavedRecipes] = useState<string[]>([]);
+  const [savedRecipes, setSavedRecipes] = useState<SavedRecipeCardProps[]>([]);
+  const [nutritionFacts, setNutritionFacts] = useState<NutrientFacts[] | []> ([]);
+
   useEffect(() => {
     console.log();
     savedRecipeAPI.retrieveRecipe(auth.getProfile().id).then((data) => {
       console.log(data);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const ViableRecipes = data.map((recipe: any) => {
         return {
           name: recipe.name,
@@ -42,22 +48,45 @@ const SavedRecipe = () => {
   const GenerateSavedRecipes = () => {
     
     return (<>
+
+    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       {savedRecipes.map((recipe: any) => {
       return (
-        <div>
-          <a onClick={() => handleRecipeClick(recipe.name)}>{recipe.name}</a>
-          <button onClick={() => handleRecipeDelete(recipe.id, recipe.name)}> Remove </button>
+        <div className="savedRecipes">
+          <a id="recipeName" onClick={() => handleRecipeClick(recipe.name)}>{recipe.name}</a>
+          <button id="deleteRecipe" onClick={() => handleRecipeDelete(recipe.id, recipe.name)}> Remove {recipe.name}</button>
         </div>
       );
     })}
     </>)
     
   };
-  const handleIngredient = (ingredient: string) => {
+  const handleIngredient = async (ingredient: string) => {
     if (ingredient === "") {
       return;
+    } 
+    try{
+      const data: NutrientFacts[] = await SearchNutrition(ingredient);
+      const nutritionData = data.slice(0, 14);
+      setNutritionFacts(nutritionData);
+    } catch (err) {
+      console.error("Could not fetch nutrient data", err);
     }
     console.log(ingredient);
+  };
+  const WriteNutrition = () => {
+    if (nutritionFacts === null) {
+      return <></>;
+    }
+    return (
+      <div className="nutrientContainer">
+        {nutritionFacts.map((nutrient: NutrientFacts, index: number) => (
+          <p id="nutrition" key={index}>
+            {nutrient.nutrientName}: {nutrient.value} {nutrient.unit}
+          </p>
+        ))}
+      </div>
+    );
   };
   return (
     <div className="sideBar">
@@ -149,6 +178,7 @@ const SavedRecipe = () => {
                 <p id="ingredient">{recipe.strMeasure10}</p>
               </ul>
             </div>
+            <WriteNutrition />
           </div>
           <div className="instructionSection">
             <p id="instructions">{recipe?.strInstructions}</p>
@@ -160,5 +190,4 @@ const SavedRecipe = () => {
     </div>
   );
 };
-
 export default SavedRecipe;

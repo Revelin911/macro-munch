@@ -4,7 +4,7 @@ import auth from '../utils/auth';
 
 
 
-const retrieveRecipe = async (loggedInUser: number | null): Promise<RecipeCardProps | string> => {
+const retrieveRecipe = async (loggedInUser: number | null): Promise<RecipeCardProps[] | []> => {
     try {
       const response = await fetch(`/api/recipes/user/${loggedInUser}`, {
         method: "GET",
