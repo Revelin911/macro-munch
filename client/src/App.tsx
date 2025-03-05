@@ -4,13 +4,15 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div>
+    <>
+    <div className="MainBody">
       <Navbar />
-      <main className='container pt-5'>
+      <main className='container'>
       </main>
         <Outlet />
-      
-    </div>
+      </div>
+      <footer><h4>This is the footer</h4></footer>
+    </>
   );
 }
 

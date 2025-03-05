@@ -18,8 +18,10 @@ const Navbar = () => {
   }, [loginCheck]);
 
   return (
-    <div className="display-flex justify-space-between align-center py-2 px-5 mint-green">
-      <h1>Macro-Munch</h1>
+    <div className="display-flex align-center py-2 px-5 header ">
+      <div className ="macroMunch">
+        <h1 id="macroMunch">Macro-Munch</h1>
+      </div>
       <div>
         {!loginCheck ? (
           <>
@@ -30,55 +32,52 @@ const Navbar = () => {
             <Link to="/login" className="btn" style={{ marginRight: "10px" }}>
               Login
             </Link>
-
-            
-            
           </>
         ) : (
           <div>
-            {`Logged in as: ${auth.getProfile().username } `}
             <button
+              id="logout"
               className="btn"
               type="button"
-              style={{ marginRight: "10px" }}
               onClick={() => {
                 auth.logout();
               }}
             >
               Logout
-            </button>
+              </button>
+            <div className="Links">
+              
+              <Link
+                style={{ marginRight: "10px" }}
+                id="nav-item"
+                to="/recipeFinder"
+                className={
+                  currentPage === "/recipeFinder" ? "active" : "nav-link"
+                }
+              >
+                Find Recipe
+              </Link>
 
-            <Link
-              // className="btn"
-              style={{ marginRight: "10px" }}
-              id="nav-item"
-              to="/recipeFinder"
-              className={
-                currentPage === "/recipeFinder" ? "active" : "nav-link"
-              }
-            >
-              Find Recipe
-            </Link>
+              <Link
+                style={{ marginRight: "10px" }}
+                id="nav-item"
+                to="/savedRecipe"
+                className={
+                  currentPage === "/savedRecipe" ? "active" : "nav-link"
+                }
+              >
+                Saved Recipes
+              </Link>
 
-            <Link
-              // className="btn"
-              style={{ marginRight: "10px" }}
-              id="nav-item"
-              to="/savedRecipe"
-              className={currentPage === "/savedRecipe" ? "active" : "nav-link"}
-            >
-              Saved Recipes
-            </Link>
-
-            <Link
-              // className="btn"
-              style={{ marginRight: "10px" }}
-              id="nav-item"
-              to="/Nutrients"
-              className={currentPage === "/Nutrients" ? "active" : "nav-link"}
-            >
-              Nutrition Facts
-            </Link>
+              <Link
+                style={{ marginRight: "10px" }}
+                id="nav-item"
+                to="/Nutrients"
+                className={currentPage === "/Nutrients" ? "active" : "nav-link"}
+              >
+                Nutrition Facts
+              </Link>
+            </div>
           </div>
         )}
       </div>

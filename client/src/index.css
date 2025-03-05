@@ -1755,9 +1755,8 @@ li{
   justify-content: start;
 }
 #sideBar{
-  font-size: 30px;
+  font-size: 50px;
   margin-left: 5%;
-  text-decoration: underline;
 }
 .headContainer{
   display: flex;
@@ -1765,7 +1764,13 @@ li{
   align-items:center;
 }
 #recipeForm{
-  margin-left:70%;
+  margin-left: 5%;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+}
+#recipeInput{
+  margin-left:10px;
+  padding: 10px 80px 10px 10px;
 }
 .buttonContainer{
   display: flex;
@@ -1788,13 +1793,16 @@ li{
   display:flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 #flavor{
-  color: purple;
-  margin-left: 40%;
+  color: rgba(76, 15, 161, 0.67);
+  font-size:20px;
+  
 }
 #login-carImg{
 height: 1400px;
+width:100%;
 }
 .backgroundContainer {
  /* background-image: url("../utils/IMG/Nutrition Picture.webp");*/
@@ -1808,26 +1816,87 @@ height: 1400px;
 .nutrientContainer{
   margin-left: 5%;
   height: 600px;
-  width: 400px;
-  border: 2px solid black;
+  width: 600px;
+  border: 2px solid rgba(76, 15, 161, 0.67);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 #nutrition{
   margin-top: 1%;
-  margin-left: 10%;
+  margin-bottom: 0;
+  color: rgba(76, 15, 161, 0.67);
+  font-size: 20px;
+}
+#nutritionAmount{
+  padding: 0 0 0 15px;
 }
 .savedRecipes{
   display: flex;
-  flex-direction: column;
   align-items: start;
 }
 #deleteRecipe{
   margin-top: 10px;
   margin-left: 80px;
   margin-bottom: 20px;
-
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
 }
 #recipeName{
   font-size: 30px;
-  color: rgb(175, 86, 86);
+  color: rgba(76, 15, 161, 0.67);
 }
+.MainBody{
+  min-height: 1000px;
+}
+html{
+  background-color: rgb(205, 105, 105);
+}
+h1{
+  color: rgba(76, 15, 161, 0.67);
+}
+#yummyRecipe{
+  margin-left: 20px;
+  font-size:25px;
+}
+.header{
+  display:flex;
+ justify-content: space-between;
+
+}
+.macroMunch{
+  display:flex;
+  justify-content:flex-end;
+}
+#macroMunch{
+  font-size:70px;
+  margin-bottom:0;
+}
+.Links{
+  display:flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+#logout{
+  margin-left:80%;
+}
+#nav-item{
+  margin: 0 10px 0 10px;
+  color: rgba(76, 15, 161, 0.67);
+  font-size:25px;
+  padding: 4px 4px 4px 4px;
+  border-radius: 5px;;
+  border: 2px solid rgba(76, 15, 161, 0.67);
+}
+#ingredient{
+    color: rgba(76, 15, 161, 0.67);
+    font-size: 20px;
+}
+#saveMeal{
+  padding: 5px 5px 5px 5px;
+  margin:0;
+  border-radius: 8px;
+}
+
 /* MEDIA QUERIES */

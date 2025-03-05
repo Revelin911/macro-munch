@@ -58,7 +58,7 @@ const RecipeFinder = () => {
     }
     try {
       const data: NutrientFacts[] = await SearchNutrition(ingredient);
-      const nutritionData = data.slice(0, 14);
+      const nutritionData = data.slice(0, 15);
       setNutritionFacts(nutritionData);
     } catch (err) {
       console.error("Could not fetch nutrient data", err);
@@ -91,10 +91,12 @@ const RecipeFinder = () => {
     }
     return (
       <div className="nutrientContainer">
-   { nutritionFacts.map((nutrient: NutrientFacts, index: number) => (
+        {nutritionFacts.map((nutrient: NutrientFacts, index: number) => (
+     <>
       <p id="nutrition" key={index}>
-        {nutrient.nutrientName}: {nutrient.value} {nutrient.unit}
-      </p>
+        {nutrient.nutrientName}</p> <p id="nutritionAmount">{nutrient.value} {nutrient.unit}
+            </p>
+          </>
     ))}
 </div >
   );
@@ -103,22 +105,25 @@ const RecipeFinder = () => {
     <div>
       <div className="headContainer">
         <h1> Recipe Finder</h1>
-        <p>Find a recipe and save it to your dashboard!</p>
         <form onSubmit={handleFormSubmit}>
+          <button id="recipeForm" type="submit">
+            Search
+          </button>
           <input
-            id="recipeForm"
+            id="recipeInput"
             type="text"
             placeholder="Search for a recipe"
             onChange={handleInputChange}
           />
-          <button type="submit">Search</button>
         </form>
       </div>
       {recipe ? (
         <div>
           <div className="buttonContainer">
-            <button onClick={() => handleRecipeSave()}>
-              <p>save Meal</p>
+            <button
+              id="saveMeal"
+              onClick={() => handleRecipeSave()}>
+              <p id="saveMeal">save Meal</p>
             </button>
           </div>
           <h2 className="recipeName">{recipe.strMeal}</h2>
@@ -137,14 +142,14 @@ const RecipeFinder = () => {
                 >
                   {recipe.strIngredient1}{" "}
                 </a>
-                <p id="ingredient">{recipe.strMeasure1}</p>
+                <p id="measurements">{recipe.strMeasure1}</p>
                 <a
                   id="ingredient"
                   onClick={() => handleIngredient(recipe.strIngredient2)}
                 >
                   {recipe.strIngredient2}{" "}
                 </a>
-                <p id="ingredient">{recipe.strMeasure2}</p>
+                <p id="measurements">{recipe.strMeasure2}</p>
 
                 <a
                   id="ingredient"
@@ -152,56 +157,56 @@ const RecipeFinder = () => {
                 >
                   {recipe.strIngredient3}{" "}
                 </a>
-                <p id="ingredient">{recipe.strMeasure3}</p>
+                <p id="measurements">{recipe.strMeasure3}</p>
                 <a
                   id="ingredient"
                   onClick={() => handleIngredient(recipe.strIngredient4)}
                 >
                   {recipe.strIngredient4}{" "}
                 </a>
-                <p id="ingredient">{recipe.strMeasure4}</p>
+                <p id="measurements">{recipe.strMeasure4}</p>
                 <a
                   id="ingredient"
                   onClick={() => handleIngredient(recipe.strIngredient5)}
                 >
                   {recipe.strIngredient5}{" "}
                 </a>
-                <p id="ingredient">{recipe.strMeasure5}</p>
+                <p id="measurements">{recipe.strMeasure5}</p>
                 <a
                   id="ingredient"
                   onClick={() => handleIngredient(recipe.strIngredient6)}
                 >
                   {recipe.strIngredient6}{" "}
                 </a>
-                <p id="ingredient">{recipe.strMeasure6}</p>
+                <p id="measurements">{recipe.strMeasure6}</p>
                 <a
                   id="ingredient"
                   onClick={() => handleIngredient(recipe.strIngredient7)}
                 >
                   {recipe.strIngredient7}{" "}
                 </a>
-                <p id="ingredient">{recipe.strMeasure7}</p>
+                <p id="measurements">{recipe.strMeasure7}</p>
                 <a
                   id="ingredient"
                   onClick={() => handleIngredient(recipe.strIngredient8)}
                 >
                   {recipe.strIngredient8}{" "}
                 </a>
-                <p id="ingredient">{recipe.strMeasure8}</p>
+                <p id="measurements">{recipe.strMeasure8}</p>
                 <a
                   id="ingredient"
                   onClick={() => handleIngredient(recipe.strIngredient9)}
                 >
                   {recipe.strIngredient9}{" "}
                 </a>
-                <p id="ingredient">{recipe.strMeasure9}</p>
+                <p id="measurements">{recipe.strMeasure9}</p>
                 <a
                   id="ingredient"
                   onClick={() => handleIngredient(recipe.strIngredient10)}
                 >
                   {recipe.strIngredient10}{" "}
                 </a>
-                <p id="ingredient">{recipe.strMeasure10}</p>
+                <p id="measurements">{recipe.strMeasure10}</p>
               </ul>
             </div>
             <WriteNutrition />
