@@ -47,12 +47,11 @@ const Home = () => {
             {
                 !loginCheck ? (
                     <div className='login-notice'>
-                        
-                        <div className="flavor">
-                            <h1 id="yummyRecipe">
+                        <h1>
                             Login to search yummy recipes!
                         </h1>
-                            <h2 id="flavor">Take a ride to flavor town!</h2>
+                        <div className="flavor">
+                            <h2 id="flavor">Take a riddde to flavour town!</h2>
                         
                             <img id="login-carImg" src={carImg}></img>
                         </div>
