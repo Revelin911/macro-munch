@@ -42,7 +42,6 @@ const SavedRecipe = () => {
     const User = auth.getProfile();
     if (User.id !== null && User.id !== undefined) {
       savedRecipeAPI.deleteRecipe(id, recipe, User.id);
-      window.location.reload();
     }
   }
   const GenerateSavedRecipes = () => {

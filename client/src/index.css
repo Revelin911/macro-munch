@@ -1845,13 +1845,16 @@ width:100%;
 }
 #recipeName{
   font-size: 30px;
-  color: rgba(76, 15, 161, 0.67);
+  color: rgba(76,
+    15,
+    161,
+    0.67);
 }
 .MainBody{
   min-height: 1000px;
 }
 html{
-  background-color: rgb(205, 105, 105);
+  background-color: rgb(171, 162, 155);
 }
 h1{
   color: rgba(76, 15, 161, 0.67);
